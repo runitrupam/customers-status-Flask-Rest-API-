@@ -1,0 +1,13 @@
+
+
+
+
+
+all profiles  -->
+http://127.0.0.1:8000/allProfiles
+
+choose a sno. HERE 5 and call to delete 
+http://127.0.0.1:8000/delete_prof/5 
+
+
+

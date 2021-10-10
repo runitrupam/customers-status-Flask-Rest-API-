@@ -1,0 +1,15 @@
+ Create REST endpoints that supports the following -
+
+1. List all profiles. Each profile has Name, Date of Birth and status. Status can be either ACTIVE or PAUSED. Default status is ACTIVE.
+2. List only paused profiles.
+3. Pause a profile.
+4. Unpause a profile (Status from PAUSED to ACTIVE)
+5. Delete a profile
+6. Create a profile
+
+You can use any language and Relational DB of your choice.
+Share both video and github link.
+
+Video is a demo recording of
+a. all the above functionality where you run these REST endpoints on console and show input/output
+b. quick code walkthrough

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="container my-3">
+    <h2>Add a New Profile</h2>
+    <form action="/" method="POST">
+        <div class="mb-3">
+            <label for="Prof_Name" class="form-label">Profile Name</label>
+            <input type="text" class="form-control" name='Prof_Name' id="Prof_Name" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="DOB" class="form-label">Date of Birth</label>
+            <input type="text" class="form-control"  value = 'YYYY-MM-DD' name='DOB' id="DOB">
+        </div>
+        <div class="mb-3">
+            <label for="Status" class="form-label">Status </label>
+            <input type="text" class="form-control" value ='Active' name='Status' id="Status">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+<div class="container my-3">
+    <h2> This is my Profile list </h2>
+
+
+    {% if allProf|length == 0 %}
+    <div class="alert alert-dark" role="alert">
+        No profiles found. Add your first profile now!
+    </div>
+    {% else %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S no.</th>
+                <th scope="col">Name</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Status</th>
+                <th scope="col">Creation Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prod in allProf %}
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{prod.name}}</td>
+                <td>{{prod.dob}}</td>
+                <td>{{prod.status}}</td>
+                <td>{{prod.date_created}}</td>
+                <td>
+                    <a href="/update/{{prod.sno}}" type="button"
+                        class="btn btn-outline-dark btn-sm mx-1">Update Status</button>
+                        <a href="/delete/{{prod.sno}}" method="DELETE" type="button" class="btn btn-outline-info mx -2">delete Profile</button>
+                </td>
+
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+{% endblock body %}

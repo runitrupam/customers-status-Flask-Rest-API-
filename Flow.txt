@@ -1,0 +1,39 @@
+python -m pip install -U pip --user 
+pip install virtualenv
+virtualenv env       
+.\env\Scripts\activate.ps1    
+python app.py
+
+from app import db
+db.create_all()
+
+pip install gunicorn
+
+pip freeze > requirements.txt
+
+heroku login
+
+Procfile:
+
+	web: gunicorn app:app
+
+
+git init
+ 
+git add .   
+ 
+git commit -m "Initialize commit"
+
+heroku create profile-list-9998
+
+git remote -v
+
+https://profile-list-9998.herokuapp.com/ | https://git.heroku.com/profile-list-9998.git
+
+
+git remote add heroku2 https://git.heroku.com/profile-list-9998.git
+git push heroku2 master
+
+git remote add origin https://github.com/runitrupam/customers-status-Flask-Rest-API-.git
+#git branch -M main
+git push -u origin master
